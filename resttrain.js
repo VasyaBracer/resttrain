@@ -1,3 +1,5 @@
+var fortune = require('./lib/fortune.js')
+
 var http = require('http')
 var https = require('https')
 var express = require('express')
@@ -16,7 +18,7 @@ app.get('/', function(request,response){
 )
 
 app.get('/about', function(request,response){
-    response.render('about')
+    response.render('about', {fortune: fortune.getFortune()})
     }
 )
 
