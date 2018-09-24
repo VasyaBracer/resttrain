@@ -6,8 +6,8 @@
         </title>
         {{#if showTests}}
             <link rel="stylesheet" href="/vendor/mocha.css"
-        {{/if}}
-        <script src="//code.jquery.com/jquery-3.3.1.min.js"></script>
+        {{/if}}      
+        <script src="//code.jquery.com/jquery-2.0.2.min.js"></script>
     </head>
     <body>
         <header>
@@ -23,10 +23,15 @@
                 mocha.ui('tdd')
                 var assert = chai.assert
             </script>
+           
             <script src="/qa/tests-global.js"></script>
+            <script src="/qa/tests-unit.js"></script>
             {{#if pageTestScript}}
-                <script src="{{pageTestScript}}"></script>
+                <script src="{{pageTestScript}}"></script>            
             {{/if}}
+            <script>
+                    mocha.run();
+            </script>
         {{/if}}
     </body>
 </html>

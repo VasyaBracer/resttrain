@@ -19,10 +19,26 @@ app.use(function(req, res, next){
     next();
 });
 
+app.get('/vasya', function(request,response){
+    response.render('vasya');
+    }
+);
+
+app.get('/tours/hood-river', function(request,response){
+    response.render('tours/hood-river');
+    }
+);
+
+app.get('/tours/request-group-rate', function(request,response){
+    response.render('tours/request-group-rate');
+    }
+);
+
 app.get('/', function(request,response){
     response.render('home');
     }
 );
+
 
 app.get('/about', function(request,response){
     response.render('about', {
